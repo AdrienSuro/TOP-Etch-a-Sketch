@@ -13,7 +13,11 @@ function createGridElements() {
     do 
     {const square = document.createElement('div');
     square.setAttribute('style', `display:flex; background: white; height: ${squareWidth}px ; width: ${squareWidth}px`);
-    square.addEventListener("mouseover", () => {square.style.backgroundColor = "black";});
+    square.addEventListener("mouseover", () => {
+        let randomRed = Math.floor(Math.random() * 256);
+        let randomGreen = Math.floor(Math.random() * 256);
+        let randomBlue = Math.floor(Math.random() * 256);
+        square.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;});
     main.appendChild(square);
     i += 1;
     }
